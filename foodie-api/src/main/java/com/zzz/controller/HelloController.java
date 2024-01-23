@@ -1,5 +1,8 @@
 package com.zzz.controller;
 
+import com.zzz.pojo.Carousel;
+import com.zzz.service.CarouselService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,9 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    @Autowired
+    private CarouselService carouselService;
+
     @GetMapping("/hello")
     public String hello() {
-        return "hello world";
+        return carouselService.getById("c-10011").toString();
     }
 
 }
