@@ -2,6 +2,7 @@ package com.zzz.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzz.pojo.Users;
+import com.zzz.pojo.bo.UserBO;
 
 /**
 * @author zhangzhongzhen
@@ -11,5 +12,7 @@ import com.zzz.pojo.Users;
 public interface UsersService extends IService<Users> {
 
     public boolean queryUsernameIsExist(String username);
+
+    public Users createUser(UserBO userBO);
 
 }

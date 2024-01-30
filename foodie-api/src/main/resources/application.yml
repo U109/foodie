@@ -31,6 +31,10 @@ spring:
       pool-name: DateSourceHikariCP   # 连接池名字
       max-lifetime: 1800000           # 连接的生命时长（毫秒），超时而且没被使用则被释放（retired），默认:30分钟
       connection-test-query: SELECT 1
+  mvc:
+    pathmatch:
+      matching-strategy:
+        ant_path_matcher
 
 ############################################################
 #
@@ -40,3 +44,4 @@ spring:
 mybatis:
   type-aliases-package: com.zzz.pojo    # 实体层
   mapper-locations: classpath:mapper/*.xml          # mapper 层
+
